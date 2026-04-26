@@ -1,7 +1,3 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
-
 const notas = [
   {
     slug: "cambio-interpretacion",
@@ -37,12 +33,15 @@ const notas = [
   },
 ];
 
-export default function NotasPage() {
-  const searchParams = useSearchParams();
-  const slugActual = searchParams.get("nota") || notas[0].slug;
+export default async function NotasPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ nota?: string }>;
+}) {
+  const params = await searchParams;
+  const slugActual = params.nota || notas[0].slug;
 
-  const notaActual =
-    notas.find((n) => n.slug === slugActual) || notas[0];
+  const notaActual = notas.find((nota) => nota.slug === slugActual) || notas[0];
 
   return (
     <main className="min-h-screen bg-[#F5F5F3] px-6 py-16 text-[#54656D]">
@@ -51,11 +50,9 @@ export default function NotasPage() {
           ← Volver al inicio
         </a>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[300px_1fr]">
-          
-          {/* MENU LATERAL */}
-          <aside className="rounded-[2rem] border bg-white p-5">
-            <p className="text-sm text-[#95BF4A] uppercase">
+        <div className="mt-10 grid gap-8 lg:grid-cols-[320px_1fr]">
+          <aside className="rounded-[2rem] border border-[#D8DAD7] bg-white p-5">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#95BF4A]">
               Publicaciones
             </p>
 
@@ -64,36 +61,35 @@ export default function NotasPage() {
                 <a
                   key={nota.slug}
                   href={`/notas?nota=${nota.slug}`}
-                  className={`block rounded-xl p-3 border ${
+                  className={`block rounded-2xl border px-4 py-3 text-sm transition ${
                     nota.slug === notaActual.slug
-                      ? "bg-[#F2F8E8]"
-                      : "hover:bg-gray-100"
+                      ? "border-[#95BF4A] bg-[#F2F8E8] text-[#6B97A8]"
+                      : "border-[#D8DAD7] text-[#66757C] hover:bg-[#F8F9F8]"
                   }`}
                 >
-                  <span className="text-xs text-[#95BF4A]">
+                  <span className="block text-xs font-medium text-[#95BF4A]">
                     {nota.tipo}
                   </span>
-                  <p className="text-sm font-medium mt-1">
-                    {nota.titulo}
-                  </p>
+                  <span className="mt-1 block font-medium">{nota.titulo}</span>
                 </a>
               ))}
             </div>
           </aside>
 
-          {/* CONTENIDO */}
-          <article className="rounded-[2rem] bg-white p-8">
-            <p className="text-sm text-[#95BF4A] uppercase">
+          <article className="rounded-[2rem] border border-[#D8DAD7] bg-white p-8">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#95BF4A]">
               {notaActual.tipo}
             </p>
 
-            <h1 className="text-3xl font-semibold mt-3 text-[#6B97A8]">
+            <h1 className="mt-4 text-4xl font-semibold leading-tight text-[#6B97A8]">
               {notaActual.titulo}
             </h1>
 
-            <div className="mt-6 space-y-4">
-              {notaActual.contenido.map((p, i) => (
-                <p key={i}>{p}</p>
+            <div className="mt-8 space-y-5">
+              {notaActual.contenido.map((parrafo, index) => (
+                <p key={index} className="text-lg leading-8 text-[#66757C]">
+                  {parrafo}
+                </p>
               ))}
             </div>
           </article>

@@ -241,9 +241,9 @@ export default function BionarWebMaqueta() {
             </div>
             <div className="rounded-[2rem] border border-[#D8DAD7] bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
               <p className="text-sm font-medium text-[#95BF4A]">Próximo programa</p>
-              <h3 className="mt-2 text-xl font-semibold text-[#6B97A8]">Emprender con propósito</h3>
+              <h3 className="mt-2 text-xl font-semibold text-[#6B97A8]">Mentoría para Emprendedores</h3>
               <p className="mt-3 text-sm leading-7 text-[#66757C]">
-                Un espacio para ordenar tu visión, fortalecer tu comunicación y dar pasos concretos en tu negocio.
+                Para el emprendedor que trabaja mucho, prueba todo y sigue sin ver resultados
               </p>
             </div>
             <div className="rounded-[2rem] border border-[#D8DAD7] bg-[#6B97A8] p-5 text-white shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
@@ -420,7 +420,7 @@ export default function BionarWebMaqueta() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section id="testimonios" className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#95BF4A]">Testimonios</p>

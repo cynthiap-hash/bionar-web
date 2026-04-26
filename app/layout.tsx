@@ -1,3 +1,4 @@
+import Header from "./components/Header";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -27,40 +28,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F5F5F3] text-[#54656D]`}
       >
+        
+        {/* HEADER (ahora es componente) */}
+        <Header />
 
-        {/* HEADER */}
-        <header className="sticky top-0 z-50 border-b border-[#D8DAD7] bg-white text-[#54656D]">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-
-            {/* LOGO */}
-            <a href="/" className="flex items-center gap-3">
-              <img
-                src="/logo-bionar.jpg"
-                alt="Bionar"
-                className="h-12 w-auto object-contain"
-              />
-            </a>
-
-            {/* NAV */}
-            <nav className="hidden items-center gap-6 text-sm text-[#54656D] md:flex">
-              <a href="/#inicio" className="transition hover:text-[#6B97A8]">Inicio</a>
-              <a href="/#servicios" className="transition hover:text-[#6B97A8]">Servicios</a>
-              <a href="/#cursos" className="transition hover:text-[#6B97A8]">Cursos</a>
-              <a href="/#publicaciones" className="transition hover:text-[#6B97A8]">Publicaciones</a>
-              <a href="/#contacto" className="transition hover:text-[#6B97A8]">Contacto</a>
-
-              <a
-                href="/#registro"
-                className="rounded-full bg-[#95BF4A] px-4 py-2 font-medium text-white"
-              >
-                Inscribirme
-              </a>
-            </nav>
-
-          </div>
-        </header>
-
-        {/* CONTENIDO DE CADA PÁGINA */}
+        {/* CONTENIDO */}
         {children}
 
         {/* FOOTER */}

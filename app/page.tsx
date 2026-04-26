@@ -12,6 +12,7 @@ export default function BionarWebMaqueta() {
 
   const [estado, setEstado] = useState("");
   const [cargando, setCargando] = useState(false);
+  const [cursoAbierto, setCursoAbierto] = useState<string | null>(null);
 
   const servicios = [
     {
@@ -46,26 +47,47 @@ export default function BionarWebMaqueta() {
 
   const cursos = [
     {
-      nombre: "Introducción a la Biodescodificación",
+      nombre: "Mentoría para Emprendedores",
       modalidad: "Presencial / Online",
+      duracion: "Emprender con Propósito · 3 meses · 1:1",
       resumen:
-        "Una experiencia inicial para comprender fundamentos, casos prácticos y aplicaciones al ámbito personal.",
-      imagen:
-        "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      nombre: "Emprender con propósito",
-      modalidad: "Workshop intensivo",
-      resumen:
-        "Entrenamiento para alinear visión, propósito, emocionalidad y estrategia de negocio.",
+        "Para el emprendedor que trabaja mucho, prueba todo y sigue sin ver resultados.",
+      modulos: [
+        "Módulo 1: Diagnóstico del negocio y claridad inicial",
+        "Módulo 2: Creencias, bloqueos y toma de decisiones",
+        "Módulo 3: Estrategia, foco y plan de acción",
+        "Módulo 4: Comunicación, ventas y seguimiento",
+      ],
       imagen:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
     },
     {
-      nombre: "PNL aplicada a ventas y comunicación",
-      modalidad: "Seminario",
+      nombre: "Biología del Liderazgo",
+      modalidad: "Presencial / Online",
+      duracion: "Para líderes y equipos · 3 meses",
+      modulos: [
+        "Módulo 1: Diagnóstico del liderazgo y dinámica del equipo",
+        "Módulo 2: Creencias, control y dificultad para delegar",
+        "Módulo 3: Comunicación efectiva y construcción de confianza",
+        "Módulo 4: Toma de decisiones y liderazgo sostenible",
+      ],
       resumen:
-        "Recursos concretos para escuchar mejor, comunicar con impacto y vender desde la autenticidad.",
+        "Para el líder que hace todo solo, no puede delegar y lleva el equipo a cuestas.",
+      imagen:
+        "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      nombre: "Despierta tu poder creador",
+      modalidad: "Presencial",
+      duracion: "Lo realizaremos con la lic. Marian Botteron · 2 meses",
+      modulos: [
+        "Módulo 1: Autoconocimiento y conexión interior",
+        "Módulo 2: Creencias, miedos y transformación personal",
+        "Módulo 3: Autoobservación y gestión emocional",
+        "Módulo 4: Propósito, valores y diseño de vida",
+      ],
+      resumen:
+        "Para quienes quieran lograr avanzar en el camino hacia el bienestar, comprender el lenguaje del cuerpo y tomar decisiones",
       imagen:
         "https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&w=1200&q=80",
     },
@@ -94,7 +116,7 @@ export default function BionarWebMaqueta() {
         "Reprograma tu mente para el éxito: Más allá de las creencias limitantes",
       tipo: "Artículo",
       slug: "creencias-emociones-decisiones",
-      Preview: "Las creencias limitantes frenan tu crecimiento, pero puedes reprogramarlas con PNL. Cambiar tu lenguaje interno y emocional transforma tus resultados y tu liderazgo.",
+      preview: "Las creencias limitantes frenan tu crecimiento, pero puedes reprogramarlas con PNL. Cambiar tu lenguaje interno y emocional transforma tus resultados y tu liderazgo.",
       imagen:
         "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
     },
@@ -169,26 +191,6 @@ export default function BionarWebMaqueta() {
 
   return (
     <div className="min-h-screen bg-[#F5F5F3] text-[#54656D]">
-      <header className="sticky top-0 z-50 border-b border-[#D8DAD7] bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#inicio" className="flex items-center gap-3">
-            <img
-              src="/logo-bionar.png"
-              alt="Bionar"
-              className="h-12 w-auto object-contain"
-            />
-          </a>
-
-          <nav className="hidden items-center gap-6 text-sm md:flex">
-            <a href="#inicio" className="transition hover:text-[#6B97A8]">Inicio</a>
-            <a href="#servicios" className="transition hover:text-[#6B97A8]">Servicios</a>
-            <a href="#cursos" className="transition hover:text-[#6B97A8]">Cursos</a>
-            <a href="#publicaciones" className="transition hover:text-[#6B97A8]">Publicaciones</a>
-            <a href="#contacto" className="transition hover:text-[#6B97A8]">Contacto</a>
-            <a href="#registro" className="rounded-full bg-[#95BF4A] px-4 py-2 font-medium text-white">Inscribirme</a>
-          </nav>
-        </div>
-      </header>
 
       <section id="inicio" className="relative overflow-hidden bg-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(149,191,74,0.12),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(107,151,168,0.16),_transparent_30%)]" />
@@ -253,7 +255,7 @@ export default function BionarWebMaqueta() {
             </div>
           </div>
         </div>
-        <div className="grid gap- rounded-[2rem] border border-[#D8DAD7] bg-white p-6 md:grid-cols-3 relative z-10 mx-auto -mt-20 max-w-7xl px-6 pb-8">
+        <div className="grid gap-4 rounded-[2rem] border border-[#D8DAD7] bg-white p-6 md:grid-cols-3 relative z-10 mx-auto -mt-20 max-w-7xl px-6 pb-8">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#95BF4A]">Propuesta</p>
             <h2 className="mt-3 text-3xl font-semibold text-[#6B97A8]">Bionar: una forma distinta de trabajar en tu negocio</h2>
@@ -323,10 +325,10 @@ export default function BionarWebMaqueta() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#95BF4A]">Portfolio de cursos</p>
-              <h2 className="mt-3 text-3xl font-semibold text-[#6B97A8] md:text-4xl">Formaciones realizadas y próximas ediciones</h2>
+              <h2 className="mt-3 text-3xl font-semibold text-[#6B97A8] md:text-4xl">Programas de formación y acompañamiento</h2>
             </div>
             <p className="max-w-xl text-[#66757C]">
-              Esta sección puede mostrar cursos dados, programas activos, cupos, testimonios o próximas fechas de inscripción.
+              No se trata solo de aprender, sino de generar cambios reales en tu forma de decidir, comunicar y crecer.
             </p>
           </div>
 
@@ -336,16 +338,50 @@ export default function BionarWebMaqueta() {
                 key={curso.nombre}
                 className="overflow-hidden rounded-[1.75rem] border border-[#D8DAD7] bg-[#F8F9F8]"
               >
-                <img src={curso.imagen} alt={curso.nombre} className="h-56 w-full object-cover" />
+                <img 
+                  src={curso.imagen} 
+                  alt={curso.nombre} 
+                  className="h-56 w-full object-cover" />
+
                 <div className="p-6">
-                  <span className="inline-flex rounded-full bg-[#EDF4F6] px-3 py-1 text-xs font-medium text-[#6B97A8]">
+                  <span className="inline-flex rounded-full bg-[#EDF4F6] px-2 py-1 text-xs font-medium text-[#6B97A8]">
                     {curso.modalidad}
                   </span>
-                  <h3 className="mt-4 text-xl font-semibold text-[#6B97A8]">{curso.nombre}</h3>
-                  <p className="mt-3 leading-7 text-[#66757C]">{curso.resumen}</p>
-                  <button className="mt-6 rounded-2xl border border-[#95BF4A] px-4 py-2 text-sm font-medium text-[#7FA642] transition hover:bg-[#F0F7E6]">
-                    Ver detalle
+
+                  <p className="mt-3 px-1 text-sm text-[#6B97A8] font-medium">
+                    {curso.duracion}
+                  </p>
+
+                  <h3 className="mt-4 text-xl font-semibold text-[#6B97A8]">
+                    {curso.nombre}</h3>
+
+                  <p className="mt-3 leading-7 text-[#66757C]">
+                    {curso.resumen}</p>
+
+                  <button 
+                    type="button"
+                    onClick={() =>
+                      setCursoAbierto(
+                        cursoAbierto === curso.nombre ? null : curso.nombre
+                      )
+                    }
+                    className="mt-6 rounded-2xl border border-[#95BF4A] px-4 py-2 text-sm font-medium text-[#7FA642] transition hover:bg-[#F0F7E6]"
+                  >
+                    {cursoAbierto === curso.nombre ? "↑ Ver menos" : "Ver detalle"}
                   </button>
+                
+                {cursoAbierto === curso.nombre && curso.modulos && (
+                  <div className="mt-6 rounded-2xl bg-[#F2F8E8] p-5">
+                    <h4 className="font-semibold text-[#6B97A8]">
+                      Módulos del curso
+                    </h4>
+
+                    <ul className="mt-4 space-y-2 text-sm leading-6 text-[#66757C]"></ul>
+                      {curso.modulos.map((modulo, index) => (
+                        <li key={index}> {modulo}</li>
+                      ))}
+                  </div>
+                )}
                 </div>
               </article>
             ))}
@@ -356,9 +392,9 @@ export default function BionarWebMaqueta() {
       <section id="publicaciones" className="mx-auto max-w-7xl px-6 py-20">
         <div className="max-w-2xl">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#95BF4A]">Publicaciones</p>
-          <h2 className="mt-3 text-3xl font-semibold text-[#6B97A8] md:text-4xl">Frases, notas y contenidos de valor</h2>
+          <h2 className="mt-3 text-3xl font-semibold text-[#6B97A8] md:text-4xl">Liderazgo, mentalidad y crecimiento consciente</h2>
           <p className="mt-4 text-lg text-[#66757C]">
-            Ideas para entender cómo lo que pensás y sentís impacta en tu negocio.
+            Ideas para alinear tu forma de pensar con los resultados que querés lograr.
           </p>
         </div>
 
@@ -410,10 +446,10 @@ export default function BionarWebMaqueta() {
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#95BF4A]">Inscripciones</p>
             <h2 className="mt-3 text-3xl font-semibold text-[#6B97A8] md:text-4xl">
-              Déjanos tus datos y te enviamos próximas fechas
+              Da el próximo paso en tu liderazgo y crecimiento
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-8 text-[#66757C]">
-              Puedes usar este bloque para captar consultas e inscripciones a cursos, talleres, sesiones o mentorías.
+              Recibí información sobre nuestros programas y empezá a transformar tu forma de pensar, liderar y obtener resultados.
             </p>
           </div>
 
@@ -444,10 +480,11 @@ export default function BionarWebMaqueta() {
                 className="w-full rounded-2xl border border-[#D9DFE2] px-4 py-3 text-[#66757C] outline-none transition focus:border-[#6B97A8]"
               >
                 <option value="">Me interesa...</option>
-                <option>Curso de Biodescodificación</option>
-                <option>Programa de Coaching</option>
-                <option>PNL para emprendedores</option>
+                <option>Mentoria para emprendedores</option>
+                <option>Biología del Liderazgo</option>
+                <option>Despierta tu poder creador</option>
                 <option>Asesoramiento empresarial</option>
+                <option>Acompañamiento 1:1 personalizado</option>
               </select>
               <textarea
                 name="mensaje"
@@ -499,10 +536,6 @@ export default function BionarWebMaqueta() {
           </div>
         </div>
       </section>
-
-      <footer className="border-t border-[#D8DAD7] bg-[#F5F5F3] px-6 py-6 text-center text-sm text-[#7A878D]">
-        © 2026 Bionar · Coaching & Biodescodificación
-      </footer>
     </div>
   );
 }

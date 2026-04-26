@@ -74,24 +74,27 @@ export default function BionarWebMaqueta() {
   const publicaciones = [
     {
       titulo:
-        "El cambio empieza en la interpretación que hacemos de lo que vivimos",
+        "El nuevo liderazgo: transformar el ser para transformar los resultados.",
       tipo: "Frase",
       slug: "cambio-interpretacion",
+      preview: "El liderazgo actual nace del autoconocimiento, la coherencia y la resiliencia, más allá de solo resultados. Liderar desde el ser genera confianza, cultura sólida y relaciones auténticas.",
       imagen:
         "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
     },
     {
-      titulo: "Cómo acompañar a un emprendedor desde una mirada integral",
+      titulo: "El éxito no es lo que haces, sino quién eres mientras lo haces.",
       tipo: "Nota",
       slug: "acompanar-emprendedor",
+      preview: "El verdadero éxito no depende de lo que haces, sino de quién eres al hacerlo. La identidad y la coherencia son la base para decisiones firmes y vínculos de confianza.",
       imagen:
         "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
     },
     {
       titulo:
-        "Creencias, emociones y decisiones en el crecimiento de un negocio",
+        "Reprograma tu mente para el éxito: Más allá de las creencias limitantes",
       tipo: "Artículo",
       slug: "creencias-emociones-decisiones",
+      Preview: "Las creencias limitantes frenan tu crecimiento, pero puedes reprogramarlas con PNL. Cambiar tu lenguaje interno y emocional transforma tus resultados y tu liderazgo.",
       imagen:
         "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
     },

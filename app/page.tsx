@@ -373,7 +373,7 @@ export default function BionarWebMaqueta() {
                 <span className="text-sm font-medium text-[#95BF4A]">{item.tipo}</span>
                 <h3 className="mt-3 text-xl font-semibold leading-8 text-[#6B97A8]">{item.titulo}</h3>
                 <p className="mt-4 leading-7 text-[#66757C]">
-                  Una vista previa breve para invitar a seguir leyendo y reforzar tu posicionamiento como referente.
+                  {item.preview}
                 </p>
                 <a href={`/notas?nota=${item.slug}`} className="mt-6 inline-block text-sm font-medium text-[#6B97A8]">
                   Leer más →

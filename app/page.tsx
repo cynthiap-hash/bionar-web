@@ -76,12 +76,14 @@ export default function BionarWebMaqueta() {
       titulo:
         "El cambio empieza en la interpretación que hacemos de lo que vivimos",
       tipo: "Frase",
+      slug: "cambio-interpretacion",
       imagen:
         "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
     },
     {
       titulo: "Cómo acompañar a un emprendedor desde una mirada integral",
       tipo: "Nota",
+      slug: "acompanar-emprendedor",
       imagen:
         "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
     },
@@ -89,6 +91,7 @@ export default function BionarWebMaqueta() {
       titulo:
         "Creencias, emociones y decisiones en el crecimiento de un negocio",
       tipo: "Artículo",
+      slug: "creencias-emociones-decisiones",
       imagen:
         "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
     },
@@ -369,7 +372,7 @@ export default function BionarWebMaqueta() {
                 <p className="mt-4 leading-7 text-[#66757C]">
                   Una vista previa breve para invitar a seguir leyendo y reforzar tu posicionamiento como referente.
                 </p>
-                <a href="#contacto" className="mt-6 inline-block text-sm font-medium text-[#6B97A8]">
+                <a href={`/notas?nota=${item.slug}`} className="mt-6 inline-block text-sm font-medium text-[#6B97A8]">
                   Leer más →
                 </a>
               </div>

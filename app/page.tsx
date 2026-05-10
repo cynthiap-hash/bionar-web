@@ -215,17 +215,17 @@ export default function BionarWebMaqueta() {
               </a>
             </div>
 
-            <div className="mt-10 grid max-w-lg grid-cols-3 gap-4">
+            <div className="mt-10 grid max-w-lg grid-cols-1 gap-4 lg:grid-cols-3">
               <div className="rounded-2xl border border-[#D8DAD7] bg-[#FAFAF9] p-4">
-                <p className="text-2xl font-semibold text-[#6B97A8]">Claridad</p>
+                <p className="text-xl md:text-2xl font-semibold text-[#6B97A8] leading-tight">Claridad</p>
                 <p className="mt-1 text-sm text-[#66757C]">Entender que está influyendo en tu negocio. Aprende a liderar tus emociones.</p>
               </div>
               <div className="rounded-2xl border border-[#D8DAD7] bg-[#FAFAF9] p-4">
-                <p className="text-2xl font-semibold text-[#6B97A8]">Dirección</p>
+                <p className="text-xl md:text-2xl font-semibold text-[#6B97A8] leading-tight">Dirección</p>
                 <p className="mt-1 text-sm text-[#66757C]">Enfoque estratégico para guiar las decisiones de tu proyecto. Saber qué hacer y en qué orden</p>
               </div>
               <div className="rounded-2xl border border-[#D8DAD7] bg-[#FAFAF9] p-4">
-                <p className="text-2xl font-semibold text-[#6B97A8]">Acción</p>
+                <p className="text-xl md:text-2xl font-semibold text-[#6B97A8] leading-tight">Acción</p>
                 <p className="mt-1 text-sm text-[#66757C]">Diseñar un plan alineado con tu propósito. Definir pasos claros para ejecutarlo.</p>
               </div>
             </div>
@@ -323,11 +323,11 @@ export default function BionarWebMaqueta() {
       <section id="cursos" className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-2xl">
+            <div className="max-w-5xl">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#95BF4A]">Portfolio de cursos</p>
               <h2 className="mt-3 text-3xl font-semibold text-[#6B97A8] md:text-4xl">Programas de formación y acompañamiento</h2>
             </div>
-            <p className="max-w-xl text-[#66757C]">
+            <p className="mt-5 max-w-4xl text-lg leading-8 text-[#66757C]">
               No se trata solo de aprender, sino de generar cambios reales en tu forma de decidir, comunicar y crecer.
             </p>
           </div>

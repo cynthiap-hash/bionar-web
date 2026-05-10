@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bionar",
   description: "Coaching · PNL · Biodescodificación",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

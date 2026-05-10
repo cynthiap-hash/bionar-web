@@ -124,9 +124,9 @@ export default function BionarWebMaqueta() {
 
   const testimonios = [
     {
-      nombre: "Mariana G.",
+      nombre: "Mariana Lagraña",
       texto:
-        "El acompañamiento me ayudó a ordenar mi emprendimiento y, al mismo tiempo, a trabajar aspectos personales que me frenaban.",
+        "Marta, querida coach gracias por todo lo aprendido hasta el momento me diste herramientas que sumaron muchísimo en mi emprendimiento y calidad de vida, gracias por mostrarme que hay otros caminos a los cuales puedo indagar y ser mejor! Te recomiendo siempre en cada lugar y persona que SE que va a resonar con tu trabajo, increíble profesional . Gracias de todo corazón.",
     },
     {
       nombre: "Lucía R.",
